@@ -21,5 +21,5 @@ python main.py
 ## Reference
 
 - [1] N. Metropolis, A. W. Rosenbluth, M. N. Rosenbluth, A. H. Teller, E. Teller, J. Chem. Phys., 21, 1087 (1953).
-- [2] Robert H. Swendsen and Jian-Sheng Wang, Phys. Rev. Lett. 58, 86 – Published 12 January 1987
-- [3] Ulli Wolff, Phys. Rev. Lett. 62, 361 – Published 23 January 1989
+- [2] Robert H. Swendsen and Jian-Sheng Wang, Phys. Rev. Lett. 58, 86
+- [3] Ulli Wolff, Phys. Rev. Lett. 62, 361
