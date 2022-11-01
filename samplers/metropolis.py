@@ -27,29 +27,22 @@ class Ising:
         # Define Ising spings.
         self.spins = 2 * np.random.randint(2, size=(Nx, Ny), dtype=np.int8) - 1
         
+        # Define neighbors
+        # self.nbrs rule lattice type (e.g. triangle, kagome, ...) and boundary condition (open, periodic). 
+        self.nbrs = lambda x, y: [
+            (x, (y+1)%self.Ny), # top
+            ((x+1)%self.Nx, y)  # right
+        ]      
+
         # Energy of current spins configuration.
         self.e = self.energy()
 
     def energy(self):
-        # initialize energy.
         e = 0.0
-
-        # Loop run vertices belongs bulk.
         for x in range(self.Nx-1):
             for y in range(self.Ny-1):
-                # Calculate energy between nearest-neighbnors (with periodic boundary)
-                e += -1.0 * self.J * self.spins[x, y] * self.spins[x+1, y]
-                e += -1.0 * self.J * self.spins[x, y] * self.spins[x, y+1]
-
-        # Loop run vertices belongs horizontal edge.
-        # NOTE If you want open boundary, please comment out below.
-        for x in range(self.Nx):
-            e += -1.0 * self.J * self.spins[x, self.Ny-1] * self.spins[x, 0]
-
-        # Loop run vertices belongs vertical edge.
-        # NOTE If you want open boundary, please comment out below.
-        for y in range(self.Ny):
-            e += -1.0 * self.J * self.spins[self.Nx-1, y] * self.spins[0, y]
+                for x_, y_ in self.nbrs(x, y):
+                    e += -1.0 * self.J * self.spins[x, y] * self.spins[x_, y_]
 
         return e
 
