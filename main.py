@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 from samplers.metropolis import Metropolis
 from samplers.swedsen_wang import SwendsenWang
 from samplers.wolff import Wolff
-import signal
-signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 if __name__  == '__main__':
     # config
