@@ -3,7 +3,7 @@ import random
 import numpy as np
 
 
-class Ising:
+class Metropolis:
     
     def __init__(
         self,
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     J = 1.0
     T = 1.0
 
-    model = Ising(Nx, Ny, J, T)
+    model = Metropolis(Nx, Ny, J, T)
 
     import matplotlib.pyplot as plt
     plt.ion()

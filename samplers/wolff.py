@@ -4,7 +4,7 @@ from typing import List, Tuple
 import numpy as np
 
 
-class Ising:
+class Wolff:
     
     def __init__(
         self,
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     Ny = 16
     J = 1.0
     T = 1.0
-    model = Ising(Nx, Ny, J, T)
+    model = Wolff(Nx, Ny, J, T)
 
     import matplotlib.pyplot as plt
     plt.ion()

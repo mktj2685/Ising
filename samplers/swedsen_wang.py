@@ -8,7 +8,7 @@ sys.path.append(osp.dirname(osp.dirname(__file__)))
 from utils.unionfind import UnionFind
 
 
-class Ising:
+class SwendsenWang:
     
     def __init__(
         self,
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     Ny = 16
     J = 1.0
     T = 1.0
-    model = Ising(Nx, Ny, J, T)
+    model = SwendsenWang(Nx, Ny, J, T)
 
     import matplotlib.pyplot as plt
     plt.ion()
