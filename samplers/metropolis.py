@@ -39,8 +39,8 @@ class Ising:
 
     def energy(self):
         e = 0.0
-        for x in range(self.Nx-1):
-            for y in range(self.Ny-1):
+        for x in range(self.Nx):
+            for y in range(self.Ny):
                 for x_, y_ in self.nbrs(x, y):
                     e += -1.0 * self.J * self.spins[x, y] * self.spins[x_, y_]
 
